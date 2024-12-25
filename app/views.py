@@ -149,6 +149,7 @@ class UserAPI(APIView):
 class UserViewSet(viewsets.ModelViewSet):
     serializer_class=UserSerializer
     queryset=Users.objects.all()
+
     #list method is used to search particular data
     def list(self,request):
         search=request.GET.get("search")
