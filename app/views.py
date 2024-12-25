@@ -149,9 +149,6 @@ class UserAPI(APIView):
 class UserViewSet(viewsets.ModelViewSet):
     serializer_class=UserSerializer
     queryset=Users.objects.all()
-    permission_classes = [IsAuthenticated]
-    authentication_classes=[TokenAuthentication]
-
     #list method is used to search particular data
     def list(self,request):
         search=request.GET.get("search")
